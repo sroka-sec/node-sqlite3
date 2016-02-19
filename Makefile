@@ -6,6 +6,7 @@ all: build
 	npm install --build-from-source
 
 build: ./node_modules
+        ./node_modules/.bin/node-pre-gyp --arch=arm configure
 	./node_modules/.bin/node-pre-gyp build --loglevel=silent
 
 debug:
